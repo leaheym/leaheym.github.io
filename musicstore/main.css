@@ -24,3 +24,7 @@ a:hover {
   text-decoration: underline;
   font-weight: bold;
 }
+
+table, th, td {
+  border: 1-pixel solid black;
+}

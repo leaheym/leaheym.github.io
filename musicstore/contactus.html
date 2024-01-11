@@ -10,12 +10,17 @@
 
     <!-- insert form here-->
 <form oninput="fn.value = firstname.value + “ “ + lastname.value">
+    <fieldset>
+        <legend>Personal</legend>
     <label for="firstname">First Name</label>
     <input accesskey="f" tabindex="1" type="text" name="firstname" id="firstname">
     <label for="lastname">Last Name</label>
     <input accesskey="l" tabindex="2" type="text" name="lastname" id="lastname">
     <label for="email">Email Address</label>
     <input accesskey="e" tabindex="3" type="email" name="email" id="email">
+    </fieldset>
+    <fieldset>
+        <legend>Questions</legend>
     <p>How did you hear about us?</p>
     <select name="found" id="found">
         <optgroup label="Media">
@@ -36,6 +41,7 @@
         <option value="drums">Drums</option>
         <option value="bass">Bass</option>
     </datalist>
+    </fieldset>
     <p>Add comments below</p>
     <textarea rows="6" cols="50" maxlength="255"></textarea>
     <button name="showimage" onclick="">Show image</button>

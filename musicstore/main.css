@@ -21,6 +21,15 @@ p {
 
 a {
   text-decoration: none;
+  color: darkgreen;
+}
+
+a:active {
+  color: #63F60A;
+}
+
+a:visited {
+  color: #808080
 }
 
 a:hover {

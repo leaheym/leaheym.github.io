@@ -14,6 +14,10 @@ p {
   font-weight: bold;
 }
 
+.indent {
+  text-indent: 5em;
+}
+
 #sidenote {
   background-color: #dbd9d9;
   display: inline;

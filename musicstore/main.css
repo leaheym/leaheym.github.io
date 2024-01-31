@@ -25,11 +25,11 @@ a {
 }
 
 a:visited {
-  color: #808080
+  color: #808080;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: double;
   font-weight: bold;
 }
 
@@ -43,4 +43,8 @@ figcaption {
   background-color: #AADDFF;
   display: inline;
   color: #032F0D;
+}
+
+table.vbot {
+  height: 30px;
 }

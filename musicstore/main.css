@@ -10,6 +10,8 @@ p {
 .sale {
   font-weight: bold;
   background-color: aqua;
+  font-style: italic;
+  font-weight: 700;
 }
 
 #sidenote {

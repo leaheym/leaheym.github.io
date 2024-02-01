@@ -57,9 +57,10 @@ h1 {
   font-size: 18pt;
 }
 
+/*The background color extends across the page*/
 figcaption {
   font-weight: bold;
-  background-color: #AADDFF;
+  /*background-color: #AADDFF;*/
   display: inline;
   color: navy;
   background-color: aqua;

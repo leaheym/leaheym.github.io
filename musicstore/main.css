@@ -21,11 +21,12 @@ p {
 #sidenote {
   background-color: #dbd9d9;
   display: inline;
-  border-color:navy;
-  border-style:dashed;
-  border-width: 0px;
-  border-left-width: 2px;
-  border-right-width: 2px;
+  /*border-color:navy;*/
+  /*border-style:dashed;*/
+  /*border-width: 0px;*/
+  /*border-left-width: 2px;*/
+  /*border-right-width: 2px;*/
+  border: 2px solid naavy;
 }
 
 a {

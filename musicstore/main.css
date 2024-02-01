@@ -22,7 +22,7 @@ p {
   background-color: #dbd9d9;
   display: inline;
   border-color:navy;
-  border-style:solid;
+  border-style:dashed;
 }
 
 a {

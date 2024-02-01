@@ -61,7 +61,8 @@ figcaption {
   font-weight: bold;
   background-color: #AADDFF;
   display: inline;
-  color: #032F0D;
+  color: navy;
+  background-color: aqua;
 }
 
 @media screen and (max-width: 500px) {

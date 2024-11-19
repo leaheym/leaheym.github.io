@@ -2,6 +2,27 @@
 <html>
   <head>
     <title>My Digital Portfolio</title>
+    <script>
+// Check if a count exists in local storage
+let count = localStorage.getItem('visitorCount');
+
+// If not, initialize it to 0
+if (count === null) {
+  count = 0;
+} else {
+  // Otherwise, parse the stored value (which is a string) into a number
+  count = parseInt(count);
+}
+
+// Increment the count
+count++;
+
+// Store the updated count
+localStorage.setItem('visitorCount', count);
+
+// Display the count on the page
+document.getElementById('visitor-count').textContent = count;      
+    </script>
 </head>
   <body>
     <nav>
@@ -9,6 +30,7 @@
       <li><a href="aboutme.html">About Me</a></li>
       <li><a href="musicstore/musicstore.html" target="_blank">Sample Website</a></li>
     </nav>
+    <p>Visitors: <span id="visitor-count"></span></p>
   </body>
   <footer>
   </footer>

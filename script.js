@@ -17,3 +17,4 @@ localStorage.setItem('visitorCount', count);
 
 // Display the count on the page
 document.getElementById('visitor-count').textContent = count;
+ 

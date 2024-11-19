@@ -1,20 +1,16 @@
-var counterContainer = document.querySelector(".website-counter");
-var resetButton = document.querySelector("#reset");
-var visitCount = localStorage.getItem("page_view");
+// Check if a count exists in local storage
+let count = localStorage.getItem('visitorCount');
 
-// Check if page_view entry is present
-if (visitCount) {
-  visitCount = Number(visitCount) + 1;
-  localStorage.setItem("page_view", visitCount);
+// If no count exists, set it to 0
+if (count === null) {
+    count = 0;
 } else {
-  visitCount = 1;
-  localStorage.setItem("page_view", 1);
+    // If a count exists, increment it
+    count = parseInt(count) + 1;
 }
-counterContainer.innerHTML = visitCount;
 
-// Adding onClick event listener
-resetButton.addEventListener("click", () => {
-  visitCount = 1;
-  localStorage.setItem("page_view", 1);
-  counterContainer.innerHTML = visitCount;
-});
+// Update the count in local storage
+localStorage.setItem('visitorCount', count);
+
+// Display the count on the page
+document.getElementById('visitor-count').textContent = count;

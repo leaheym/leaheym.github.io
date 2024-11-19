@@ -1,20 +1,20 @@
-// Check if a count exists in local storage
-let count = localStorage.getItem('visitorCount');
+var counterContainer = document.querySelector(".website-counter");
+var resetButton = document.querySelector("#reset");
+var visitCount = localStorage.getItem("page_view");
 
-// If not, initialize it to 0
-if (count === null) {
-  count = 0;
+// Check if page_view entry is present
+if (visitCount) {
+  visitCount = Number(visitCount) + 1;
+  localStorage.setItem("page_view", visitCount);
 } else {
-  // Otherwise, parse the stored value (which is a string) into a number
-  count = parseInt(count);
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
 }
+counterContainer.innerHTML = visitCount;
 
-// Increment the count
-count++;
-
-// Store the updated count
-localStorage.setItem('visitorCount', count);
-
-// Display the count on the page
-document.getElementById('visitor-count').textContent = count;
- 
+// Adding onClick event listener
+resetButton.addEventListener("click", () => {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+  counterContainer.innerHTML = visitCount;
+});

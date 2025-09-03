@@ -108,9 +108,7 @@
 <h3>Letter Grade: <span id="letter">F</span></h3>
 <h3>Cumulative GPA: <span id="cumulativeGPA">0.0</span></h3>
     <br>
-    <br>
-    <br>
-    <p>Note: This does not account for weighted courses</p>
+    <p>Note:  For honors courses, add 0.5 points to the total.  For AICE and AP courses, add 1.0 points to the total</p>
 <script>
     function addCourse() {
         const container = document.getElementById('courses');
@@ -118,8 +116,8 @@
         div.className = 'course-entry';
         div.innerHTML = `
         <input type="text" placeholder="Course Name">
-        GPA: <input type="number" step="0.1" min="0" max="4" class="gpa">
-        Credits: <input type="number" min="0" class="credits">
+        GPA: <input type="number" placeholder="GPA" step="0.1" min="0" max="4" class="gpa">
+        Credits: <input type="number" placeholder="Credits" min="0" class="credits">
         <span class="remove-btn" onclick="removeCourse(this)">Remove</span>
       `;
         container.appendChild(div);

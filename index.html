@@ -33,7 +33,7 @@
             border-bottom: 1px solid #eee;
         }
 
-        input[type="number"], input[type="text"] {
+        input[type="number"], input[type="text"], select {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
@@ -75,7 +75,7 @@
             background-color: #2980b9;
         }
 
-        #courses input {
+        #courses input, #courses select {
             margin-right: 10px;
             margin-top: 5px;
         }
@@ -107,19 +107,26 @@
 <h3>GPA (4.0 Scale): <span id="gpa">0.0</span></h3>
 <h3>Letter Grade: <span id="letter">F</span></h3>
 <h3>Cumulative GPA: <span id="cumulativeGPA">0.0</span></h3>
-    <br>
-    <p>Note:  For honors courses, add 0.5 points to the total.  For AICE and AP courses, add 1.0 point to the total</p>
+<br>
+<p>Note: For honors courses, add 0.5 points to the total. For AICE and AP courses, add 1.0 point to the total</p>
+
 <script>
     function addCourse() {
         const container = document.getElementById('courses');
         const div = document.createElement('div');
         div.className = 'course-entry';
         div.innerHTML = `
-        <input type="text" placeholder="Course Name">
-        GPA: <input type="number" placeholder="GPA" step="0.1" min="0" max="4" class="gpa">
-        Credits: <input type="number" placeholder="Credits" min="0" class="credits">
-        <span class="remove-btn" onclick="removeCourse(this)">Remove</span>
-      `;
+            <input type="text" placeholder="Course Name">
+            GPA: <input type="number" placeholder="GPA" step="0.1" min="0" max="4" class="gpa">
+            Credits: <input type="number" placeholder="Credits" min="0" class="credits">
+            Type: 
+            <select class="course-type">
+                <option value="regular">Regular</option>
+                <option value="honors">Honors</option>
+                <option value="ap">AP</option>
+            </select>
+            <span class="remove-btn" onclick="removeCourse(this)">Remove</span>
+        `;
         container.appendChild(div);
     }
 
@@ -184,10 +191,20 @@
 
         const gpaInputs = document.querySelectorAll('.gpa');
         const creditInputs = document.querySelectorAll('.credits');
+        const typeInputs = document.querySelectorAll('.course-type');
 
         for (let i = 0; i < gpaInputs.length; i++) {
-            const gpa = parseFloat(gpaInputs[i].value) || 0;
+            let gpa = parseFloat(gpaInputs[i].value) || 0;
             const credits = parseFloat(creditInputs[i].value) || 0;
+            const type = typeInputs[i].value;
+
+            // Apply GPA boost
+            if (type === "honors") {
+                gpa += 0.5;
+            } else if (type === "ap") {
+                gpa += 1.0;
+            }
+
             totalPoints += gpa * credits;
             totalCredits += credits;
         }
